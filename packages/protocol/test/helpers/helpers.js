@@ -1,7 +1,7 @@
-const { assertRevert } = require('@aragon/contract-helpers-test/assertThrow')
-const { bn, assertBn } = require('@aragon/contract-helpers-test/numbers')
+const { assertRevert, assertBn } = require('@1hive/contract-helpers-test/src/asserts')
+const { bn } = require('@1hive/contract-helpers-test')
 
-const { DEFAULT_STAKE_AMOUNT, DEFAULT_LOCK_AMOUNT, EMPTY_DATA, ZERO_ADDRESS } = require('./constants')
+const { DEFAULT_STAKE_AMOUNT, DEFAULT_LOCK_AMOUNT, EMPTY_DATA } = require('./constants')
 const { STAKING_ERRORS } = require('../helpers/errors')
 
 module.exports = (artifacts) => {

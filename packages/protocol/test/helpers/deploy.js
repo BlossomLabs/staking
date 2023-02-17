@@ -1,4 +1,4 @@
-const { bn } = require('@aragon/contract-helpers-test/numbers')
+const { bn } = require('@1hive/contract-helpers-test')
 
 const { DEFAULT_STAKE_AMOUNT } = require('./constants')
 
