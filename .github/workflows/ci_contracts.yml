@@ -1,32 +1,35 @@
-name: contracts
-
-on:
-  push:
-    branches: master
-  pull_request:
-    branches: '*'
-
+name: Contracts CI/CD
+on: push
 jobs:
-  CI:
+  coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - name: Install
+          node-version: 16
+
+      - name: Cache yarn modules
+        uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: yarn-${{ hashFiles('yarn.lock') }}
+
+      - name: Cache contracts
+        uses: actions/cache@v3
+        with:
+          path: |
+            packages/*/cache
+            packages/*/artifacts
+          key: contracts-${{ hashFiles('packages/*/contracts/**/*.sol') }}
+
+      - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Lint
-        run: yarn lint
-      - name: Test
-        run: yarn test
-      - name: coverage
+
+      - name: Run coverage
         run: yarn coverage
-      - name: codecov
-        uses: codecov/codecov-action@v1
-        with:
-          flags: unittests
-          fail_ci_if_error: true
-env:
-  CI: true
+
+      - name: Upload report
+        run: bash <(curl -s https://codecov.io/bash)
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
