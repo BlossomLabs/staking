@@ -3,7 +3,8 @@ coverage
 coverage.json
 coverageEnv/
 
-# build artifacts
+# hardhat
 abi
-build
-flattened_contracts
+cache
+artifacts
+deployments/localhost

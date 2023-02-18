@@ -5,17 +5,17 @@
   "author": "Aragon Assocation <legal@aragon.org>",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "lint": "yarn workspace protocol lint",
-    "test": "yarn workspace protocol test",
-    "test:gas": "yarn workspace protocol test:gas",
-    "coverage": "yarn workspace protocol coverage"
+    "lint": "yarn workspace @aragon/staking lint",
+    "test": "yarn workspace @aragon/staking test",
+    "test:gas": "yarn workspace @aragon/staking test:gas",
+    "coverage": "yarn workspace @aragon/staking coverage"
   },
   "workspaces": {
     "packages": [
       "packages/*"
     ],
     "nohoist": [
-      "**/@aragon/contract-helpers-test",
+      "**/@1hive/contract-helpers-test",
       "**/@aragon/staking",
       "**/@graphprotocol/graph-ts",
       "**/@graphprotocol/graph-ts/**",

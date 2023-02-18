@@ -1,4 +1,4 @@
-const { assertRevert } = require('@aragon/contract-helpers-test/assertThrow')
+const { assertRevert } = require('@1hive/contract-helpers-test/src/asserts')
 
 const { ZERO_ADDRESS } = require('./helpers/constants')
 const { STAKING_ERRORS } = require('./helpers/errors')
