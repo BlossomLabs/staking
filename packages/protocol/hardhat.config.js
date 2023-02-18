@@ -9,6 +9,8 @@ require("hardhat-deploy-tenderly");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
+const { node_url, accounts } = require("./utils/network");
+
 module.exports = {
   solidity: {
     compilers: [
