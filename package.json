@@ -15,7 +15,7 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/@aragon/contract-helpers-test",
+      "**/@1hive/contract-helpers-test",
       "**/@aragon/staking",
       "**/@graphprotocol/graph-ts",
       "**/@graphprotocol/graph-ts/**",
